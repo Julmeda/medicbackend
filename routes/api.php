@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CarouselItemsController;
 use App\Http\Controllers\Api\UserController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,6 @@ Route::put('/carousel/{id}',  [CarouselItemsController::class, 'update']);
 Route::delete('/carousel/{id}',  [CarouselItemsController::class, 'destroy']);
 
 Route::get('/user',  [UserController::class, 'index']);
+Route::get('/user/{id}',  [UserController::class, 'show']);
+Route::post('/user',  [UserController::class, 'store']);
 Route::delete('/user/{id}',  [UserController::class, 'destroy']);
