@@ -100,7 +100,7 @@ class UserController extends Controller
         $validated = $request->validated();
 
         $user->password = Hash::make($validated['password']);
-        //    or  $validated['password'];
+        //    or  $validated['password']; to incrept the password
 
         $user->save();
 
