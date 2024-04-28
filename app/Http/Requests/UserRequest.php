@@ -21,6 +21,7 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+        $rules = [];
         if (request()->routeIs('user.login')) {
             return [
                 'email'     => 'required|string|email|max:255',
@@ -45,5 +46,6 @@ class UserRequest extends FormRequest
                 'password'  => 'required|confirmed|min:8',
             ];
         }
+        return $rules;
     }
 }
